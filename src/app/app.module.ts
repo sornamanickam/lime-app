@@ -37,16 +37,16 @@ import { CheckoutModule } from './features/checkout/checkout.module';
       useClass: OptionsInterceptor,
       multi: true
     },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (http: HttpClient) => () => http.post<object>(
-        `${environment.apiUrl}/oauth/token`,
-        { 'grantType': 'client_credentials' },
-        { withCredentials: true })
-        .toPromise(),
-      multi: true,
-      deps: [HttpClient]
-    }
+    // {
+    //   provide: APP_INITIALIZER,
+    //   useFactory: (http: HttpClient) => () => http.post<object>(
+    //     `${environment.apiUrl}/oauth/token`,
+    //     { 'grantType': 'client_credentials' },
+    //     { withCredentials: true })
+    //     .toPromise(),
+    //   multi: true,
+    //   deps: [HttpClient]
+    // }
   ],
   bootstrap: [AppComponent]
 })
